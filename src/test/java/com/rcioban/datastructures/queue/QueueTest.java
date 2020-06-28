@@ -8,7 +8,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-public class QueueUnitTest {
+public class QueueTest {
 
     private Car car1, car2, car3;
     private Queue<Car> myQueue;
@@ -24,41 +24,41 @@ public class QueueUnitTest {
     @Test
     public void testGeneralOperations() {
         testGetSize_Empty();
-        testAdd(car1);
-        testAdd(car2);
-        testPeek(car1);
-        testAdd(car3);
-        testPeek(car1);
+        testAdd(this.car1);
+        testAdd(this.car2);
+        testPeek(this.car1);
+        testAdd(this.car3);
+        testPeek(this.car1);
         testRemove();
-        testPeek(car2);
+        testPeek(this.car2);
     }
 
     private void testGetSize_Empty() {
-        assertEquals(0, myQueue.getSize());
-        assertTrue(myQueue.isEmpty());
+        assertEquals(0, this.myQueue.getSize());
+        assertTrue(this.myQueue.isEmpty());
     }
 
-    private void testAdd(Car car) {
+    private void testAdd(final Car car) {
         // When
-        int size = myQueue.getSize();
-        myQueue.add(car);
+        final int size = this.myQueue.getSize();
+        this.myQueue.add(car);
 
         // Then
-        assertEquals(size+1, myQueue.getSize());
+        assertEquals(size + 1, this.myQueue.getSize());
     }
 
     private void testRemove() {
         // When
-        int size = myQueue.getSize();
-        myQueue.remove();
+        final int size = this.myQueue.getSize();
+        this.myQueue.remove();
 
         // Then
-        assertEquals(size-1, myQueue.getSize());
+        assertEquals(size - 1, this.myQueue.getSize());
     }
 
-    private void testPeek(Car car) {
+    private void testPeek(final Car car) {
         // When
-        Car c = myQueue.peek();
+        final Car c = this.myQueue.peek();
 
         // Then
         assertEquals(car, c);

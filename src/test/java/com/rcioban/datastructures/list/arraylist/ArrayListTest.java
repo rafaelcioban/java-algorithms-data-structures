@@ -1,7 +1,8 @@
 package com.rcioban.datastructures.list.arraylist;
 
-import com.rcioban.datastructures.list.List;
 import com.rcioban.datastructures.domain.Car;
+import com.rcioban.datastructures.list.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ArrayListUnitTest {
+public class ArrayListTest {
 
     private Car car1, car2, car3;
     private List<Car> myTestList;
@@ -33,51 +34,51 @@ public class ArrayListUnitTest {
     }
 
     private void testGetSize_Empty() {
-        assertEquals(0, myTestList.getSize());
+        assertEquals(0, this.myTestList.getSize());
     }
 
     private void testAddTwoElements() {
         // When
-        myTestList.add(car1);
-        myTestList.add(car2);
+        this.myTestList.add(this.car1);
+        this.myTestList.add(this.car2);
 
         // Then
-        assertEquals(2, myTestList.getSize());
+        assertEquals(2, this.myTestList.getSize());
     }
 
     public void testContains() {
-        assertTrue(myTestList.contains(car1));
-        assertTrue(myTestList.contains(car2));
-        assertFalse(myTestList.contains(car3));
+        assertTrue(this.myTestList.contains(this.car1));
+        assertTrue(this.myTestList.contains(this.car2));
+        assertFalse(this.myTestList.contains(this.car3));
     }
 
     public void testGetByIndex() {
         // When
-        Car expectedCar = myTestList.get(1);
+        final Car expectedCar = this.myTestList.get(1);
 
         // Then
-        assertEquals(car2, expectedCar);
+        assertEquals(this.car2, expectedCar);
     }
 
     public void testAddByIndex() {
         // When
-        myTestList.add(1, car3);
+        this.myTestList.add(1, this.car3);
 
         // Then
-        assertEquals(3, myTestList.getSize());
-        assertEquals(car1, myTestList.get(0));
-        assertEquals(car3, myTestList.get(1));
-        assertEquals(car2, myTestList.get(2));
+        assertEquals(3, this.myTestList.getSize());
+        assertEquals(this.car1, this.myTestList.get(0));
+        assertEquals(this.car3, this.myTestList.get(1));
+        assertEquals(this.car2, this.myTestList.get(2));
     }
 
     public void testRemove() {
         // When
-        myTestList.remove(0);
+        this.myTestList.remove(0);
 
         // Then
-        assertEquals(2, myTestList.getSize());
-        assertEquals(car3, myTestList.get(0));
-        assertEquals(car2, myTestList.get(1));
+        assertEquals(2, this.myTestList.getSize());
+        assertEquals(this.car3, this.myTestList.get(0));
+        assertEquals(this.car2, this.myTestList.get(1));
     }
 
 

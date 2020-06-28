@@ -1,13 +1,14 @@
 package com.rcioban.datastructures.stack;
 
 import com.rcioban.datastructures.domain.Car;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-public class StackUnitTest {
+public class StackTest {
 
     private Car car1, car2, car3;
     private Stack<Car> myStack;
@@ -23,42 +24,42 @@ public class StackUnitTest {
     @Test
     public void testGeneralOperations() {
         testGetSize_Empty();
-        testPush(car1);
+        testPush(this.car1);
         testPop();
         testGetSize_Empty();
-        testPush(car2);
-        testPush(car3);
+        testPush(this.car2);
+        testPush(this.car3);
         testPop();
-        testPeek(car2);
+        testPeek(this.car2);
     }
 
     private void testGetSize_Empty() {
-        assertEquals(0, myStack.getSize());
-        assertTrue(myStack.isEmpty());
+        assertEquals(0, this.myStack.getSize());
+        assertTrue(this.myStack.isEmpty());
     }
 
-    private void testPush(Car car) {
+    private void testPush(final Car car) {
         // When
-        int size = myStack.getSize();
-        myStack.push(car);
+        final int size = this.myStack.getSize();
+        this.myStack.push(car);
 
         // Then
-        assertEquals(size+1, myStack.getSize());
-        assertEquals(car, myStack.peek());
+        assertEquals(size + 1, this.myStack.getSize());
+        assertEquals(car, this.myStack.peek());
     }
 
     private void testPop() {
         // When
-        int size = myStack.getSize();
-        myStack.pop();
+        final int size = this.myStack.getSize();
+        this.myStack.pop();
 
         // Then
-        assertEquals(size-1, myStack.getSize());
+        assertEquals(size - 1, this.myStack.getSize());
     }
 
-    private void testPeek(Car car) {
+    private void testPeek(final Car car) {
         // When
-        Car c = myStack.peek();
+        final Car c = this.myStack.peek();
 
         assertEquals(car, c);
     }

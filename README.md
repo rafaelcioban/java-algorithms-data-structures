@@ -1,6 +1,6 @@
 # java-data-structures
 
-Sample project to explore the implementation of the main data structures in Java.
+Sample project to explore the implementation of the main algorithms and data structures in Java.
 
 #### Requisites
 
