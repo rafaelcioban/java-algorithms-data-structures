@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rcioban.datastructures</groupId>
-    <artifactId>java-data-structures</artifactId>
+    <artifactId>java-algorithms-data-structures</artifactId>
     <version>1.0</version>
 
     <dependencies>
@@ -26,5 +26,5 @@
         </dependency>
 
     </dependencies>
-    
+
 </project>
